@@ -52,6 +52,15 @@ gulp.task('js', function() {
 		.pipe($.connect.reload())
 });
 
+gulp.task('ngWeui', function() {
+	gulp.src(app.srcPath + 'common/weui/**/*.js')
+		.pipe($.concat('angular-weui.min.js'))
+		.pipe(gulp.dest(app.devPath + 'common/weui'))
+		.pipe($.uglify())
+		.pipe(gulp.dest(app.prdPath + 'common/weui'))
+		.pipe($.connect.reload())
+});
+
 gulp.task('image', function() {
 	gulp.src(app.srcPath + 'image/**/**')
 		.pipe($.plumber())
@@ -66,7 +75,7 @@ gulp.task('clean', function() {
 		.pipe($.clean())
 });
 
-gulp.task('build',['image','js','json','less','html','lib']);
+gulp.task('build',['image','js','json','less','html','lib','ngWeui']);
 
 gulp.task('serve', ['build'],function() {
 	$.connect.server({
