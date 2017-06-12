@@ -12,6 +12,24 @@
 7. angular-cookie、angular-validation等第三方插件的使用
 8. 数据完全依靠json数据，还要装饰器(`decorator`)对post请求进行拦截并修改为get请求
 
+#项目结构
+
+- src
+	- less
+	- image
+	- js
+		- controllers(控制器)
+		- directives(指令集)
+		- filters(过滤器)
+		- services(公共服务)
+		- app.js
+    - common
+	- views (视图)
+- node_modules	(依赖模块，本地安装时会下载依赖，没必要加到版本控制)
+- bower_components
+- build 
+- dist 
+
 ## 使用
 
 ### 安装依赖
